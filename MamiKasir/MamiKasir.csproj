@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59C32EBE-93B6-44FE-AEAB-EDFF0BE52424}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MamiKasir</RootNamespace>
+    <AssemblyName>MamiKasir</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net48\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net48\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cadangdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadangdata.Designer.cs">
+      <DependentUpon>cadangdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Identitastoko.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Identitastoko.Designer.cs">
+      <DependentUpon>Identitastoko.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Koneksi.cs" />
+    <Compile Include="laporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="laporan.Designer.cs">
+      <DependentUpon>laporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master.Designer.cs">
+      <DependentUpon>Master.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pegawai.Designer.cs">
+      <DependentUpon>Pegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pelanggan.Designer.cs">
+      <DependentUpon>Pelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PilihLayanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PilihLayanan.Designer.cs">
+      <DependentUpon>PilihLayanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Produk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produk.Designer.cs">
+      <DependentUpon>Produk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proses.Designer.cs">
+      <DependentUpon>Proses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RaportDetailCucian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaportDetailCucian.Designer.cs">
+      <DependentUpon>RaportDetailCucian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raportjasacucian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raportjasacucian.Designer.cs">
+      <DependentUpon>Raportjasacucian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raportpegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raportpegawai.Designer.cs">
+      <DependentUpon>Raportpegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="raportpelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="raportpelanggan.Designer.cs">
+      <DependentUpon>raportpelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RaportPencucian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaportPencucian.Designer.cs">
+      <DependentUpon>RaportPencucian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RaportTopUpSaldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RaportTopUpSaldo.Designer.cs">
+      <DependentUpon>RaportTopUpSaldo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Topup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Topup.Designer.cs">
+      <DependentUpon>Topup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi.Designer.cs">
+      <DependentUpon>Transaksi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="cadangdata.resx">
+      <DependentUpon>cadangdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Identitastoko.resx">
+      <DependentUpon>Identitastoko.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporan.resx">
+      <DependentUpon>laporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master.resx">
+      <DependentUpon>Master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pegawai.resx">
+      <DependentUpon>Pegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pelanggan.resx">
+      <DependentUpon>Pelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PilihLayanan.resx">
+      <DependentUpon>PilihLayanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produk.resx">
+      <DependentUpon>Produk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Proses.resx">
+      <DependentUpon>Proses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RaportDetailCucian.resx">
+      <DependentUpon>RaportDetailCucian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raportjasacucian.resx">
+      <DependentUpon>Raportjasacucian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raportpegawai.resx">
+      <DependentUpon>Raportpegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="raportpelanggan.resx">
+      <DependentUpon>raportpelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RaportPencucian.resx">
+      <DependentUpon>RaportPencucian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RaportTopUpSaldo.resx">
+      <DependentUpon>RaportTopUpSaldo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Topup.resx">
+      <DependentUpon>Topup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi.resx">
+      <DependentUpon>Transaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mansion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\master-data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utility.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cUCI-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mansion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\master-data1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utility1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mansion2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\master-data2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utility2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mansion3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\master-data3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaction3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utility3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-service %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-service1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top-up1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\washing-machine.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
